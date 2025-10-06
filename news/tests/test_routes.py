@@ -26,7 +26,7 @@ class TestRoutes(TestCase):
             news=cls.news,
             author=cls.author,
             text='Текст комментария'
-        ) 
+        )
 
     def test_pages_availability(self):
         urls = (
@@ -41,18 +41,18 @@ class TestRoutes(TestCase):
                 response = self.client.get(url)
                 self.assertEqual(response.status_code, HTTPStatus.OK)
 
-    def test_home_page(self):
-        # Вместо прямого указания адреса
-        # получаем его при помощи функции reverse().
-        url = reverse('news:home')
-        response = self.client.get(url)
-        # Проверяем, что код ответа равен статусу OK (он же 200).
-        self.assertEqual(response.status_code, HTTPStatus.OK)
+    # def test_home_page(self):
+    #     # Вместо прямого указания адреса
+    #     # получаем его при помощи функции reverse().
+    #     url = reverse('news:home')
+    #     response = self.client.get(url)
+    #     # Проверяем, что код ответа равен статусу OK (он же 200).
+    #     self.assertEqual(response.status_code, HTTPStatus.OK)
 
-    def test_detail_page(self):
-        url = reverse('news:detail', args=(self.news.id,))
-        response = self.client.get(url)
-        self.assertEqual(response.status_code, HTTPStatus.OK)
+    # def test_detail_page(self):
+    #     url = reverse('news:detail', args=(self.news.id,))
+    #     response = self.client.get(url)
+    #     self.assertEqual(response.status_code, HTTPStatus.OK)
 
     def test_redirect_for_anonymous_client(self):
         # Сохраняем адрес страницы логина:
