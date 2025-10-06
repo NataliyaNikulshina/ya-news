@@ -71,4 +71,4 @@ class TestRoutes(TestCase):
                 redirect_url = f'{login_url}?next={url}'
                 response = self.client.get(url)
                 # Проверяем, что редирект приведёт именно на указанную ссылку.
-                self.assertRedirects(response, redirect_url) 
+                self.assertRedirects(response, redirect_url)

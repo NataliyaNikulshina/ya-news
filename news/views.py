@@ -102,3 +102,10 @@ class CommentUpdate(CommentBase, generic.UpdateView):
 class CommentDelete(CommentBase, generic.DeleteView):
     """Удаление комментария."""
     template_name = 'news/delete.html'
+
+
+class NewsList(generic.ListView):
+    """Список новостей."""
+    model = News
+    template_name = 'news/home.html'
+    context_object_name = 'news_feed'
