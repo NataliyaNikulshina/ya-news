@@ -43,7 +43,7 @@ class TestHomePage(TestCase):
                 text='Просто текст.',
                 date=today - timedelta(days=index)
             )
-            for index in range(settings.NEWS_COUNT_ON_HOME_PAGE)
+            for index in range(settings.NEWS_COUNT_ON_HOME_PAGE + 1)
         ])
 
         # Берём первую новость для детальной страницы и комментариев
